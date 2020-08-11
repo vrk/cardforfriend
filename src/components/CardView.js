@@ -15,15 +15,10 @@ function CardView() {
   };
 
   const displayCard = isOpen && (
-    <OpenCard bgWord="jake englund" header="happy birthday">
+    <OpenCard bgWord="VRK" header="happy birthday" sender="vrk">
       <p>hello my friend</p>
 
       <p>I think you are the best</p>
-
-      <p>
-        <br />
-        -- from vrk
-      </p>
     </OpenCard>
   );
   const displayEnvelope = !isFinished && (

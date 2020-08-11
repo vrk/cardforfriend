@@ -1,0 +1,108 @@
+#card {
+  background-color: #e5f3ee;
+  position: absolute;
+  transition: all 1s;
+  overflow: hidden;
+}
+
+#card.grow {
+  height: 100%;
+  width: 100%;
+}
+
+.flipLeft {
+  display: inline-block;
+  animation-duration: 0.5s;
+  animation-name: flipleft;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-timing-function: steps(2, jump-end);
+}
+
+@keyframes flipleft {
+  from {
+    transform: rotate(-10deg);
+  }
+
+  to {
+    transform: rotate(40deg);
+  }
+}
+
+.flipRight {
+  display: inline-block;
+  animation-duration: 0.5s;
+  animation-name: flipright;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-timing-function: steps(2, jump-end);
+}
+
+@keyframes flipright {
+  from {
+    transform: rotate(10deg);
+  }
+
+  to {
+    transform: rotate(-40deg);
+  }
+}
+
+#bgLetters {
+  color: #b8ddd0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  font-size: 300px;
+  position: absolute;
+  top: 35%;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  transition: 1s;
+}
+
+#card.grow #bgLetters {
+  top: -10%;
+}
+
+#bgLetters span {
+  width: 0.75em;
+  text-align: center;
+}
+
+#fgMessage {
+  position: absolute;
+  top: 10%;
+  left: 0;
+  bottom: 0%;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  transition: 1s;
+}
+
+#card.grow #fgMessage {
+  top: -5%;
+}
+
+#fgMessage h1 {
+  text-transform: uppercase;
+  font-size: 3em;
+}
+
+#fgMessage h1,
+#fgMessage p {
+  margin: 0;
+}
+
+#fgFrom {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  padding: 0.5em;
+  font-size: 1.25em;
+}

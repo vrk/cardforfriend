@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import styles from "./OpenCardStyles.module.css";
+import { Textfit } from "react-textfit";
 
 function Background({ word }) {
   const AnimatedLetter = ({ letter, isEven }) => (
@@ -14,7 +15,7 @@ function Background({ word }) {
   return <div id={styles.bgLetters}>{animatedWord}</div>;
 }
 
-function Foreground({ header, children }) {
+function Foreground({ header, children, sender }) {
   return (
     <React.Fragment>
       <div id={styles.fgMessage}>
@@ -23,11 +24,12 @@ function Foreground({ header, children }) {
           {children}
         </div>
       </div>
+      <div id={styles.fgFrom}>sent with love from {sender}</div>
     </React.Fragment>
   );
 }
 
-function OpenCard({ bgWord, header, children }) {
+function OpenCard({ bgWord, header, sender, children }) {
   const [cardClass, setCardClass] = useState("");
   useEffect(() => {
     setImmediate(() => setCardClass(styles.grow));
@@ -35,7 +37,9 @@ function OpenCard({ bgWord, header, children }) {
   return (
     <div id={styles.card} className={cardClass}>
       <Background word={bgWord} />
-      <Foreground header={header}>{children}</Foreground>
+      <Foreground header={header} sender={sender}>
+        {children}
+      </Foreground>
     </div>
   );
 }
