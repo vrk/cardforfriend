@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;" version="1.1" viewBox="0 -12.088 1464.484 1013.454" xmlns="http://www.w3.org/2000/svg">
+  <g id="topFaceUp" transform="matrix(1, 0, 0, 1, -378.173859, -335.46106)">
+    <path stroke="#000000" stroke-width="5" d="M399.395+1327.27L386.001+346.566L1819.11+343.589L1829.53+1313.88L399.395+1327.27Z" fill="#ffe987" stroke-linecap="butt" opacity="1" stroke-linejoin="round"/>
+    <path d="M1534.33+429.948L1533.39+636.183L1716.08+635.241L1720.79+428.065L1534.33+429.948Z" opacity="1" fill="#ffffff"/>
+    <path d="M1628.81+602.597C1628.81+602.597+1511.13+540.672+1569.26+481.154C1594.3+455.519+1626.1+499.098+1626.1+499.098C1626.1+499.098+1651.54+459.69+1675.84+471.541C1754.68+509.993+1628.81+602.597+1628.81+602.597Z" opacity="1" fill="#ff8790"/>
+    <path stroke="#000000" stroke-width="5" d="M1745.71+534.253" fill="#ffffff" stroke-linecap="butt" opacity="1" stroke-linejoin="round"/>
+  </g>
+</svg>

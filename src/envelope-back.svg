@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;" version="1.1" viewBox="0.239 0.397 1488.522 1011.926" xmlns="http://www.w3.org/2000/svg">
+  <g id="topFaceDown" transform="matrix(1, 0, 0, 1, -377.859436, -324.751068)">
+    <path stroke="#000000" stroke-width="1" d="M315.368+1408.42C317.292+1404.57+319.217+1400.72+321.142+1396.87" fill="#000000" stroke-linecap="butt" opacity="1" stroke-linejoin="round"/>
+    <path stroke="#000000" stroke-width="5" d="M1831.51+1320.14L1833.69+339.347L400.637+352.753L401.312+1323.1L1831.51+1320.14Z" fill="#ffe987" stroke-linecap="butt" opacity="1" stroke-linejoin="round"/>
+  </g>
+  <g id="bottomFlap" transform="matrix(1, 0, 0, 1, -377.859436, -324.751068)">
+    <path stroke="#000000" stroke-width="5" d="M1839.32+349.38L1192+761L1193.32+1079.52L1838.32+1321.54L1839.32+349.38Z" fill="#ffe987" stroke-linecap="butt" opacity="1" stroke-linejoin="round"/>
+    <path stroke="#000000" stroke-width="5" d="M397.421+360.764L1089+754L1039.37+1084.61L398.414+1324.54L397.421+360.764Z" fill="#ffe987" stroke-linecap="butt" opacity="1" stroke-linejoin="round"/>
+    <path stroke="#000000" stroke-width="5" d="M395.925+1325.88C395.925+1325.88+1025.07+725.481+1129.32+720.886C1231.57+716.379+1838.04+1321.48+1838.04+1321.48L395.925+1325.88Z" fill="#ffe987" stroke-linecap="butt" opacity="1" stroke-linejoin="round"/>
+  </g>
+  <g id="topFlap" transform="matrix(1, 0, 0, 1, -377.859436, -324.751068)">
+    <path stroke="#000000" stroke-width="5" d="M1850+338C1850+338+1272.23+910.016+1134+909C998+908+389.07+352.536+389.07+352.536L1850+338Z" fill="#ffe987" stroke-linecap="butt" opacity="1" stroke-linejoin="round"/>
+  </g>
+</svg>

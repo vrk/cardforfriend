@@ -1,6 +1,7 @@
 #card {
   background-color: #e5f3ee;
   position: relative;
+  transition: 1s;
 }
 
 .flipLeft {

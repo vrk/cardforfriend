@@ -4,18 +4,33 @@ import Envelope from "./Envelope";
 
 function CardView() {
   const [isOpen, setIsOpen] = useState(false);
+  const [isFinished, setIsFinished] = useState(false);
 
-  const display = isOpen ? (
+  const onIsOpen = () => {
+    setIsOpen(true);
+  };
+
+  const onIsFinished = () => {
+    setIsFinished(true);
+  };
+
+  const displayCard = isFinished && (
     <OpenCard bgWord="jake" header="happy birthday">
       <p>hello my friend</p>
 
       <p>I think you are the best</p>
     </OpenCard>
-  ) : (
-    <Envelope />
+  );
+  const displayEnvelope = !isFinished && (
+    <Envelope onIsOpen={onIsOpen} onIsFinished={onIsFinished} />
   );
 
-  return <Fragment>{display}</Fragment>;
+  return (
+    <Fragment>
+      {displayCard}
+      {displayEnvelope}
+    </Fragment>
+  );
 }
 
 export default CardView;

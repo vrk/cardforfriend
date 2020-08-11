@@ -1,0 +1,40 @@
+.envelope {
+  position: relative;
+  width: 600px;
+  height: 575px;
+  perspective: 1000px;
+  transition: all 0.5s;
+  transform-origin: left;
+}
+
+.goAway {
+  transform: rotate(-120deg) translateX(600px);
+}
+
+.content {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+
+  transition: transform 1s;
+  transform-style: preserve-3d;
+}
+
+.rotate {
+  transform: rotateY(180deg);
+  transition: transform 0.5s;
+}
+
+.front,
+.back {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  text-align: center;
+  backface-visibility: hidden;
+  left: 0;
+}
+
+.back {
+  transform: rotateY(180deg);
+}
