@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import styles from "./OpenCardStyles.module.css";
-import { Textfit } from "react-textfit";
 
 function Background({ word }) {
   const AnimatedLetter = ({ letter, isEven }) => (

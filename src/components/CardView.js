@@ -15,7 +15,7 @@ function CardView() {
   };
 
   const displayCard = isOpen && (
-    <OpenCard bgWord="VRK" header="happy birthday" sender="vrk">
+    <OpenCard bgWord="JAKE" header="happy birthday" sender="vrk">
       <p>hello my friend</p>
 
       <p>I think you are the best</p>
