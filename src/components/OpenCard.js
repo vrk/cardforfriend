@@ -1,6 +1,27 @@
 import React, { useState, useEffect } from "react";
 import styles from "./OpenCardStyles.module.css";
 
+function OpenCard({ bgWord, header, sender, isPreview, children }) {
+  const [cardClass, setCardClass] = useState("");
+  useEffect(() => {
+    setImmediate(() => setCardClass(styles.grow));
+  }, []);
+  console.log(isPreview);
+  return (
+    <div
+      id={styles.card}
+      className={cardClass + (isPreview ? ` ${styles.preview}` : "")}
+    >
+      <Background word={bgWord} />
+      <Foreground header={header} sender={sender}>
+        {children}
+      </Foreground>
+    </div>
+  );
+}
+
+export default OpenCard;
+
 function Background({ word }) {
   const AnimatedLetter = ({ letter, isEven }) => (
     <span className={isEven ? styles.flipLeft : styles.flipRight}>
@@ -27,20 +48,3 @@ function Foreground({ header, children, sender }) {
     </React.Fragment>
   );
 }
-
-function OpenCard({ bgWord, header, sender, children }) {
-  const [cardClass, setCardClass] = useState("");
-  useEffect(() => {
-    setImmediate(() => setCardClass(styles.grow));
-  }, []);
-  return (
-    <div id={styles.card} className={cardClass}>
-      <Background word={bgWord} />
-      <Foreground header={header} sender={sender}>
-        {children}
-      </Foreground>
-    </div>
-  );
-}
-
-export default OpenCard;

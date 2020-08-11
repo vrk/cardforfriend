@@ -1,8 +1,14 @@
 #card {
+  color: #4a7968;
   background-color: #e5f3ee;
   position: absolute;
   transition: all 1s;
   overflow: hidden;
+}
+
+#card.preview {
+  position: relative;
+  transition: 0;
 }
 
 #card.grow {

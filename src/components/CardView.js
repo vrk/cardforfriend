@@ -1,6 +1,7 @@
-import React, { Fragment, useState } from "react";
+import React, { useState } from "react";
 import OpenCard from "./OpenCard";
 import Envelope from "./Envelope";
+import style from "./CardView.module.css";
 
 function CardView({ match }) {
   console.log(match);
@@ -16,7 +17,12 @@ function CardView({ match }) {
   };
 
   const displayCard = isOpen && (
-    <OpenCard bgWord="JAKE" header="happy birthday" sender="vrk">
+    <OpenCard
+      bgWord="JAKE"
+      header="happy birthday"
+      sender="vrk"
+      isPreview={false}
+    >
       <p>hello my friend</p>
 
       <p>I think you are the best</p>
@@ -27,10 +33,10 @@ function CardView({ match }) {
   );
 
   return (
-    <Fragment>
+    <div className={style.cardView}>
       {displayCard}
       {displayEnvelope}
-    </Fragment>
+    </div>
   );
 }
 

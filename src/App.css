@@ -1,13 +1,5 @@
 body {
   font-family: "Source Code Pro", monospace;
-  color: #4a7968;
   text-align: center;
-}
-
-.App {
-  height: 100vh;
-  flex-direction: column;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  color: black;
 }
