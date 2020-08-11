@@ -3,8 +3,8 @@ import * as React from "react";
 function EnvelopeFrontSvg(props) {
   return (
     <svg
-      // viewBox="0 -12.088 1464.484 1013.454"
-      viewBox="0 -575.093 1459.559 1576.459"
+      viewBox="0 -12.088 1464.484 1013.454"
+      // viewBox="0 -575.093 1459.559 1576.459"
       fillRule="evenodd"
       clipRule="evenodd"
       strokeLinecap="round"

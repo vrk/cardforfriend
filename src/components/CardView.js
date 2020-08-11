@@ -1,4 +1,4 @@
-import React, { Fragment, useState } from "react";
+import React, { Fragment, useState, useEffect } from "react";
 import OpenCard from "./OpenCard";
 import Envelope from "./Envelope";
 
@@ -14,11 +14,16 @@ function CardView() {
     setIsFinished(true);
   };
 
-  const displayCard = isFinished && (
-    <OpenCard bgWord="jake" header="happy birthday">
+  const displayCard = isOpen && (
+    <OpenCard bgWord="jake englund" header="happy birthday">
       <p>hello my friend</p>
 
       <p>I think you are the best</p>
+
+      <p>
+        <br />
+        -- from vrk
+      </p>
     </OpenCard>
   );
   const displayEnvelope = !isFinished && (

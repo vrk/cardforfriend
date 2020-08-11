@@ -15,12 +15,12 @@ function Envelope({ onIsOpen, onIsFinished }) {
     console.log("is opened");
     setIsOpened(true);
     onIsOpen();
-    onIsFinished();
   };
 
   const onTransitionEnd = () => {
     if (isOpened) {
       console.log("meep");
+      onIsFinished();
     }
   };
 

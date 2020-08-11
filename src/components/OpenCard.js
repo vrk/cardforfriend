@@ -1,5 +1,5 @@
-import React from "react";
-import styles from "./CardViewStyles.module.css";
+import React, { useState, useEffect } from "react";
+import styles from "./OpenCardStyles.module.css";
 
 function Background({ word }) {
   const AnimatedLetter = ({ letter, isEven }) => (
@@ -23,14 +23,17 @@ function Foreground({ header, children }) {
           {children}
         </div>
       </div>
-      <div id={styles.fgFrom}>from vrk</div>
     </React.Fragment>
   );
 }
 
 function OpenCard({ bgWord, header, children }) {
+  const [cardClass, setCardClass] = useState("");
+  useEffect(() => {
+    setImmediate(() => setCardClass(styles.grow));
+  }, []);
   return (
-    <div id={styles.card}>
+    <div id={styles.card} className={cardClass}>
       <Background word={bgWord} />
       <Foreground header={header}>{children}</Foreground>
     </div>

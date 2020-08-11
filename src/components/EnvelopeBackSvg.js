@@ -23,7 +23,8 @@ function EnvelopeBackSvg(props) {
   return (
     <svg
       id={styles.backEnv}
-      viewBox="14.811 -568.853 1473.271 1581.176"
+      viewBox="0.239 0.397 1488.522 1011.926"
+      //viewBox="14.811 -568.853 1473.271 1581.176"
       fillRule="evenodd"
       clipRule="evenodd"
       strokeLinecap="round"
