@@ -2,7 +2,8 @@ import React, { Fragment, useState } from "react";
 import OpenCard from "./OpenCard";
 import Envelope from "./Envelope";
 
-function CardView() {
+function CardView({ match }) {
+  console.log(match);
   const [isOpen, setIsOpen] = useState(false);
   const [isFinished, setIsFinished] = useState(false);
 
