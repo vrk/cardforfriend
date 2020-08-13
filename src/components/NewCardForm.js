@@ -1,4 +1,4 @@
-import React, { useState, Fragment } from "react";
+import React from "react";
 import { useFormik } from "formik";
 import styles from "./NewCardForm.module.css";
 import OpenCard from "./OpenCard";

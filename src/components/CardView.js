@@ -39,7 +39,7 @@ function CardView() {
         console.log("Error getting documents: ", error);
         navigate("/");
       });
-  }, []);
+  }, [id, navigate]);
 
   const onIsOpen = () => {
     setIsOpen(true);
