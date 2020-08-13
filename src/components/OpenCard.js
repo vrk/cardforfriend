@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, Fragment } from "react";
 import styles from "./OpenCardStyles.module.css";
 
-function OpenCard({ bgWord, header, sender, recipient, isPreview, children }) {
+function OpenCard({ bgWord, header, sender, recipient, message, isPreview }) {
   const [cardClass, setCardClass] = useState("");
   useEffect(() => {
     setImmediate(() => setCardClass(styles.grow));
@@ -14,7 +14,7 @@ function OpenCard({ bgWord, header, sender, recipient, isPreview, children }) {
     >
       <Background word={bgWord} />
       <Foreground header={header} sender={sender} recipient={recipient}>
-        {children}
+        {messageToHTML(message)}
       </Foreground>
     </div>
   );
@@ -49,3 +49,14 @@ function Foreground({ header, children, sender, recipient }) {
     </React.Fragment>
   );
 }
+
+const messageToHTML = (messagePlaintext) => {
+  return messagePlaintext.split("\n").map((line, index) => {
+    return (
+      <Fragment key={index}>
+        {line}
+        <br />
+      </Fragment>
+    );
+  });
+};

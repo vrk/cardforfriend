@@ -12,12 +12,15 @@ function NewCardForm() {
       title: "happy birthday",
       message: "hello my friend\n\nI think you are the best",
     },
+    onSubmit: (values) => {
+      console.log(values);
+    },
   });
   return (
     <div id={styles.main}>
       <h1>📫 Send your friend an e-card 💌</h1>
       <section>
-        <form className={styles.cardForm}>
+        <form className={styles.cardForm} onSubmit={formik.handleSubmit}>
           <div className={styles.grid}>
             <label htmlFor="name">Your name</label>
             <input
@@ -70,24 +73,12 @@ function NewCardForm() {
           header={formik.values.title}
           sender={formik.values.name}
           recipient={formik.values.friendName}
+          message={formik.values.message}
           isPreview={true}
-        >
-          {messageToHTML(formik.values.message)}
-        </OpenCard>
+        />
       </section>
     </div>
   );
 }
-
-const messageToHTML = (messagePlaintext) => {
-  return messagePlaintext.split("\n").map((line, index) => {
-    return (
-      <Fragment key={index}>
-        {line}
-        <br />
-      </Fragment>
-    );
-  });
-};
 
 export default NewCardForm;

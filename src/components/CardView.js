@@ -21,12 +21,10 @@ function CardView({ match }) {
       bgWord="JAKE"
       header="happy birthday"
       sender="vrk"
+      recipient="jake"
+      message={"hello my friend\n\nI think you are the best"}
       isPreview={false}
-    >
-      <p>hello my friend</p>
-
-      <p>I think you are the best</p>
-    </OpenCard>
+    />
   );
   const displayEnvelope = !isFinished && (
     <Envelope onIsOpen={onIsOpen} onIsFinished={onIsFinished} />
