@@ -1,19 +1,19 @@
 import React, { useState, useEffect } from "react";
 import styles from "./OpenCardStyles.module.css";
 
-function OpenCard({ bgWord, header, sender, isPreview, children }) {
+function OpenCard({ bgWord, header, sender, recipient, isPreview, children }) {
   const [cardClass, setCardClass] = useState("");
   useEffect(() => {
     setImmediate(() => setCardClass(styles.grow));
   }, []);
-  console.log(isPreview);
+  console.log(recipient);
   return (
     <div
       id={styles.card}
       className={cardClass + (isPreview ? ` ${styles.preview}` : "")}
     >
       <Background word={bgWord} />
-      <Foreground header={header} sender={sender}>
+      <Foreground header={header} sender={sender} recipient={recipient}>
         {children}
       </Foreground>
     </div>
@@ -35,7 +35,7 @@ function Background({ word }) {
   return <div id={styles.bgLetters}>{animatedWord}</div>;
 }
 
-function Foreground({ header, children, sender }) {
+function Foreground({ header, children, sender, recipient }) {
   return (
     <React.Fragment>
       <div id={styles.fgMessage}>
@@ -45,6 +45,7 @@ function Foreground({ header, children, sender }) {
         </div>
       </div>
       <div id={styles.fgFrom}>sent with love from {sender}</div>
+      <div id={styles.fgTo}>to {recipient}</div>
     </React.Fragment>
   );
 }
