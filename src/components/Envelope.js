@@ -3,7 +3,7 @@ import styles from "./EnvelopeStyles.module.css";
 import EnvelopeFrontSvg from "./EnvelopeFrontSvg.js";
 import EnvelopeBackSvg from "./EnvelopeBackSvg.js";
 
-function Envelope({ onIsOpen, onIsFinished }) {
+function Envelope({ onIsOpen, onIsFinished, recipient }) {
   const [isFlipped, setIsFlipped] = useState(false);
   const [isOpened, setIsOpened] = useState(false);
 
@@ -33,7 +33,7 @@ function Envelope({ onIsOpen, onIsFinished }) {
       onTransitionEnd={onTransitionEnd}
     >
       <div className={contentClassNames}>
-        <EnvelopeFrontSvg className={styles.front} />
+        <EnvelopeFrontSvg className={styles.front} recipient={recipient} />
         <EnvelopeBackSvg className={styles.back}>{onOpened}</EnvelopeBackSvg>
       </div>
     </div>

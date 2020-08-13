@@ -1,4 +1,5 @@
-import React, { Fragment } from "react";
+import axios from "axios";
+import React from "react";
 import { useFormik } from "formik";
 import styles from "./NewCardForm.module.css";
 import OpenCard from "./OpenCard";
@@ -13,12 +14,20 @@ function NewCardForm() {
       message: "hello my friend\n\nI think you are the best",
     },
     onSubmit: (values) => {
-      console.log(values);
+      axios.post("http://jsonplaceholder.typicode.com/posts", values);
     },
   });
   return (
     <div id={styles.main}>
-      <h1>📫 Send your friend an e-card 💌</h1>
+      <h1>
+        <span role="img" aria-label="mailbox">
+          📫
+        </span>{" "}
+        Send your friend an e-card{" "}
+        <span role="img" aria-label="envelope">
+          💌
+        </span>
+      </h1>
       <section>
         <form className={styles.cardForm} onSubmit={formik.handleSubmit}>
           <div className={styles.grid}>
@@ -62,7 +71,7 @@ function NewCardForm() {
               value={formik.values.message}
             ></textarea>
           </div>
-          <button>Create a Card</button>
+          <button type="submit">Create a Card</button>
         </form>
       </section>
       <hr />

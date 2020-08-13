@@ -42,6 +42,7 @@ h1 {
 }
 
 .cardForm textarea {
+  height: 4em;
   grid-column-start: 2;
   grid-column-end: 5;
   grid-row-start: 3;

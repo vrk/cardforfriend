@@ -1,4 +1,5 @@
 import * as React from "react";
+import style from "./EnvelopeFrontSvg.module.css";
 
 function EnvelopeFrontSvg(props) {
   return (
@@ -26,6 +27,9 @@ function EnvelopeFrontSvg(props) {
         d="M1250.636 267.136s-117.68-61.925-59.55-121.443c25.04-25.635 56.84 17.944 56.84 17.944s25.44-39.408 49.74-27.557c78.84 38.452-47.03 131.056-47.03 131.056z"
         fill="#ff8790"
       />
+      <text x="10%" y="50%" class={style.recipient}>
+        to {props.recipient}
+      </text>
     </svg>
   );
 }

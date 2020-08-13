@@ -10,7 +10,7 @@ function App() {
       <div className="App">
         <Routes>
           <Route path="/" element={<NewCardForm />} />
-          <Route path="c/:id" element={<CardView />} />
+          <Route path="c/:id" children={<CardView />} />
         </Routes>
       </div>
     </Router>

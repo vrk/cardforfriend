@@ -28,9 +28,9 @@
 .front,
 .back {
   position: absolute;
+  text-align: center;
   height: 100%;
   width: 100%;
-  text-align: center;
   backface-visibility: hidden;
   left: 0;
 }
