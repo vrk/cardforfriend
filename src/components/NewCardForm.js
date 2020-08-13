@@ -1,9 +1,9 @@
-import axios from "axios";
-import React from "react";
+import React, { useState, Fragment } from "react";
 import { useFormik } from "formik";
 import styles from "./NewCardForm.module.css";
 import OpenCard from "./OpenCard";
 import firebase from "firebase";
+import { useNavigate } from "react-router-dom";
 
 function NewCardForm() {
   const formik = useFormik({
@@ -24,10 +24,12 @@ function NewCardForm() {
           timestamp: Date.now(),
         })
         .then((response) => {
-          console.log(response);
+          navigate(`t/${response.id}`);
         });
     },
   });
+  const navigate = useNavigate();
+
   return (
     <div id={styles.main}>
       <h1>

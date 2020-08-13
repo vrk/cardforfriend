@@ -4,6 +4,7 @@ import CardView from "./components/CardView";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import NewCardForm from "./components/NewCardForm";
 import firebase from "firebase";
+import NewCardThanks from "./components/NewCardThanks";
 
 const firebaseConfig = {
   apiKey: "AIzaSyDywLcVUwX3MmmmjWCIa4BSEzVkUTb6t_c",
@@ -22,6 +23,7 @@ function App() {
       <div className="App">
         <Routes>
           <Route path="/" element={<NewCardForm />} />
+          <Route path="t/:id" children={<NewCardThanks />} />
           <Route path="c/:id" children={<CardView />} />
         </Routes>
       </div>
