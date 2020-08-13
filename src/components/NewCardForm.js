@@ -3,18 +3,29 @@ import React from "react";
 import { useFormik } from "formik";
 import styles from "./NewCardForm.module.css";
 import OpenCard from "./OpenCard";
+import firebase from "firebase";
 
 function NewCardForm() {
   const formik = useFormik({
     initialValues: {
-      name: "grizz",
-      friendName: "ice bear",
+      sender: "grizz",
+      recipient: "ice bear",
       bgText: "yass",
       title: "happy birthday",
       message: "hello my friend\n\nI think you are the best",
     },
     onSubmit: (values) => {
-      axios.post("http://jsonplaceholder.typicode.com/posts", values);
+      console.log(values);
+      firebase
+        .firestore()
+        .collection("card")
+        .add({
+          ...values,
+          timestamp: Date.now(),
+        })
+        .then((response) => {
+          console.log(response);
+        });
     },
   });
   return (
@@ -34,18 +45,18 @@ function NewCardForm() {
             <label htmlFor="name">Your name</label>
             <input
               type="text"
-              id="name"
-              name="name"
+              id="sender"
+              name="sender"
               onChange={formik.handleChange}
-              value={formik.values.name}
+              value={formik.values.sender}
             />
-            <label htmlFor="friendName">Your friend's name</label>
+            <label htmlFor="recipient">Your friend's name</label>
             <input
               type="text"
-              id="friendName"
-              name="friendName"
+              id="recipient"
+              name="recipient"
               onChange={formik.handleChange}
-              value={formik.values.friendName}
+              value={formik.values.recipient}
             />
             <label htmlFor="title">A title</label>
             <input
@@ -80,8 +91,8 @@ function NewCardForm() {
         <OpenCard
           bgWord={formik.values.bgText}
           header={formik.values.title}
-          sender={formik.values.name}
-          recipient={formik.values.friendName}
+          sender={formik.values.sender}
+          recipient={formik.values.recipient}
           message={formik.values.message}
           isPreview={true}
         />

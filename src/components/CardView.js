@@ -3,7 +3,7 @@ import OpenCard from "./OpenCard";
 import Envelope from "./Envelope";
 import style from "./CardView.module.css";
 import { useParams, useNavigate } from "react-router-dom";
-import axios from "axios";
+import firebase from "firebase";
 
 function CardView() {
   const [isLoaded, setIsLoaded] = useState(false);
@@ -21,13 +21,22 @@ function CardView() {
   console.log("userid", id);
 
   useEffect(() => {
-    axios
-      .get(`https://jsonplaceholder.typicode.com/posts/${id}`)
-      .then((values) => {
-        console.log(values);
+    firebase
+      .firestore()
+      .collection("card")
+      .doc(id)
+      .get()
+      .then(function (doc) {
+        const data = doc.data();
+        setBgWord(data.bgText);
+        setHeader(data.title);
+        setSender(data.sender);
+        setRecipient(data.recipient);
+        setMessage(data.message);
         setIsLoaded(true);
       })
-      .catch(() => {
+      .catch(function (error) {
+        console.log("Error getting documents: ", error);
         navigate("/");
       });
   }, []);
